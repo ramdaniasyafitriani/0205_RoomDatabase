@@ -1,0 +1,21 @@
+package com.example.prakkk9.viewmodel
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import com.example.prakkk9.repositori.RepositoriSiswa
+import com.example.prakkk9.room.Siswa
+
+class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
+
+    /**
+     * Berisi status Siswa saat ini
+     */
+    var uiStateSiswa by mutableStateOf(UIStateSiswa())
+        private set
+
+    
+}
+
+
