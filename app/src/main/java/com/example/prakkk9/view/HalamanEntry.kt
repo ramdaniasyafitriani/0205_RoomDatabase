@@ -56,7 +56,20 @@ fun EntrySiswaScreen(
             )
         }
     ) { innerPadding ->
-        
+        EntrySiswaBody(
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    viewModel.saveSiswa()
+                    navigateBack()
+                }
+            },
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
+                .fillMaxWidth()
+        )
     }
 }
 
